@@ -3,8 +3,14 @@
   "compilerOptions": {
     "strict": true,
     "paths": {
-      "@/*": ["./*"]
-    }
+      "@/*": ["./*"],
+      "@api/*": ["./src/api/*"],
+      "@components/*": ["./src/components/*"],
+      "@hooks/*": ["./src/hooks/*"],
+      "@store/*": ["./src/store/*"],
+      "@utils/*": ["./src/utils/*"]
+    },
+    "types": ["nativewind/types"]
   },
   "include": [
     "**/*.ts",
@@ -12,12 +18,5 @@
     ".expo/types/**/*.ts",
     "expo-env.d.ts",
     "nativewind-env.d.ts"
-  ],
-  "paths": {
-    "@api/*": ["./src/api/*"],
-    "@components/*": ["./src/components/*"],
-    "@hooks/*": ["./src/hooks/*"],
-    "@store/*": ["./src/store/*"],
-    "@utils/*": ["./src/utils/*"]
-  }
+  ]
 }
