@@ -3,15 +3,21 @@
   "compilerOptions": {
     "strict": true,
     "paths": {
-      "@/*": [
-        "./*"
-      ]
+      "@/*": ["./*"]
     }
   },
   "include": [
     "**/*.ts",
     "**/*.tsx",
     ".expo/types/**/*.ts",
-    "expo-env.d.ts"
-  ]
+    "expo-env.d.ts",
+    "nativewind-env.d.ts"
+  ],
+  "paths": {
+    "@api/*": ["./src/api/*"],
+    "@components/*": ["./src/components/*"],
+    "@hooks/*": ["./src/hooks/*"],
+    "@store/*": ["./src/store/*"],
+    "@utils/*": ["./src/utils/*"]
+  }
 }
