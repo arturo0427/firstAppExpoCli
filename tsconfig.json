@@ -9,8 +9,8 @@
       "@hooks/*": ["./src/hooks/*"],
       "@store/*": ["./src/store/*"],
       "@utils/*": ["./src/utils/*"]
-    },
-    "types": ["nativewind/types"]
+    }
+    // "types": ["nativewind/types"]
   },
   "include": [
     "**/*.ts",

@@ -1,3 +1,6 @@
+import { loginService } from "@/src/api/auth.api";
+import { useAuth } from "@/src/store/auth.store";
+import { useRouter } from "expo-router";
 import { Controller, useForm } from "react-hook-form";
 import { Text, TextInput, TouchableOpacity, View } from "react-native";
 
@@ -15,7 +18,19 @@ export default function Login() {
     defaultValues: { email: "", password: "" },
   });
 
-  const onSubmit = (data: FormData) => alert(JSON.stringify(data));
+  const { setUser, loading } = useAuth();
+  const router = useRouter();
+
+  const onSubmit = async ({ email, password }: FormData) => {
+    try {
+      const { user } = await loginService(email, password);
+      setUser(user);
+
+      router.replace("/dashboard/home");
+    } catch (error: any) {
+      alert("Error: " + error.message);
+    }
+  };
 
   return (
     <View className="flex-1 justify-center items-center">
